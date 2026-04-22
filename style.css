@@ -1,163 +1,234 @@
-/* =========================
-   style.css
-   ========================= */
-
 :root {
-  /* Colors (more subtle academic palette) */
-  --text: #1f2937;
-  --muted: #6b7280;
-  --line: #e5e7eb;
+  --bg: #0b0f14;
+  --surface: #121821;
+  --surface2: #18202b;
 
-  --accent: #0f4c81;
-  --accent2: #14b8a6;
-  --accent3: #7c3aed;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --line: #26303d;
 
-  --bg: #fdfefe;
-  --soft: #f1f7ff;
+  --accent: #60a5fa;
+  --accent2: #2dd4bf;
 }
-
-/* =========================
-   Base layout
-   ========================= */
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
   background: var(--bg);
-  line-height: 1.6;
+  color: var(--text);
+  line-height: 1.7;
 }
 
 .container {
   max-width: 980px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: auto;
+  padding: 0 24px;
 }
 
-/* =========================
-   Header
-   ========================= */
+/* HEADER */
 
 .site-header {
-  background: linear-gradient(180deg, var(--soft), #ffffff);
-  padding: 48px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 70px 0 50px;
+  border-bottom: 3px solid var(--line);
+  background:
+    radial-gradient(circle at top right, rgba(96,165,250,0.08), transparent 35%),
+    radial-gradient(circle at left, rgba(45,212,191,0.06), transparent 30%),
+    var(--bg);
 }
 
 .hero {
   display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 28px;
+  grid-template-columns: 170px 1fr;
+  gap: 32px;
   align-items: center;
 }
 
 .profile-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
+  width: 170px;
+  height: 170px;
   object-fit: cover;
+  border-radius: 50%;
 }
 
 h1 {
+  font-size: 2.7rem;
   margin: 0;
-  font-size: 2.2rem;
 }
 
 .subtitle {
-  background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: 700;
-  margin: 0.3rem 0;
+  color: var(--accent);
+  font-weight: 600;
 }
 
-/* =========================
-   Navigation
-   ========================= */
+/* NAV */
 
 .nav {
-  display: flex;
-  gap: 18px;
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(6px);
+  z-index: 50;
+  background: rgba(11,15,20,0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid var(--line);
+
+  display: flex;
+  gap: 22px;
+  padding: 16px 24px;
 }
 
 .nav a {
-  text-decoration: none;
   color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
 }
 
 .nav a:hover {
-  color: var(--accent);
+  color: var(--text);
 }
 
-/* =========================
-   Sections
-   ========================= */
+/* SECTIONS */
 
 main section {
-  padding: 34px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 52px 0;
+  border-bottom: 3px solid var(--line);
 }
 
 h2 {
-  margin-top: 0;
-  color: var(--accent);
-  border-left: 4px solid var(--accent2);
-  padding-left: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--text);
 }
 
-/* =========================
-   Cards / Projects
-   ========================= */
+p {
+  color: #d1d5db;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+  color: #d1d5db;
+}
+
+/* CARDS */
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 18px;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
 }
 
 .card {
+  background: var(--surface);
   border: 1px solid var(--line);
-  padding: 18px;
-  border-radius: 8px;
-  background: linear-gradient(180deg, #ffffff, #fbfdff);
-  box-shadow: 0 8px 18px rgba(15, 76, 129, 0.06);
+  border-radius: 14px;
+  padding: 20px;
 }
 
-/* =========================
-   Footer
-   ========================= */
+/* LINKS */
+
+a {
+  color: var(--accent);
+}
+
+/* FOOTER */
 
 .footer {
-  padding: 28px 0;
+  padding: 30px 0;
   color: var(--muted);
 }
 
-/* =========================
-   Responsive
-   ========================= */
+/* MOBILE */
 
-@media (max-width: 700px) {
+@media (max-width: 720px) {
   .hero {
     grid-template-columns: 1fr;
+    text-align: center;
   }
 
   .profile-photo {
-    width: 140px;
-    height: 140px;
+    margin: auto;
   }
 
   .nav {
     flex-wrap: wrap;
   }
 }
+
+/* =========================
+   Publications
+========================= */
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pub-item {
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.pub-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.pub-item p {
+  margin: 0 0 8px;
+}
+
+.pub-item p:last-child {
+  margin-bottom: 0;
+}
+
+.pub-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.pub-authors {
+  color: #d1d5db;
+  font-size: 0.95rem;
+}
+
+.pub-venue {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.pub-links {
+  margin-top: 10px;
+  font-size: 0.92rem;
+}
+
+.pub-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.pub-links a:hover {
+  color: var(--accent2);
+}
+
+.pub-links span {
+  color: var(--muted);
+  margin: 0 8px;
+}
+```
