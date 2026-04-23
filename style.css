@@ -1,7 +1,6 @@
 :root {
   --bg: #0b0f14;
   --surface: #121821;
-  --surface2: #18202b;
 
   --text: #f3f4f6;
   --muted: #9ca3af;
@@ -38,10 +37,6 @@ body {
 .site-header {
   padding: 70px 0 50px;
   border-bottom: 3px solid var(--line);
-  background:
-    radial-gradient(circle at top right, rgba(96,165,250,0.08), transparent 35%),
-    radial-gradient(circle at left, rgba(45,212,191,0.06), transparent 30%),
-    var(--bg);
 }
 
 .hero {
@@ -63,18 +58,13 @@ h1 {
   margin: 0;
 }
 
-.subtitle {
-  color: var(--accent);
-  font-weight: 600;
-}
-
 /* NAV */
 
 .nav {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(11,15,20,0.88);
+  background: rgba(11, 15, 20, 0.88);
   backdrop-filter: blur(10px);
   border-bottom: 3px solid var(--line);
 
@@ -120,11 +110,12 @@ li {
 }
 
 /* CARDS */
+/* currently not in use */
 
 .cards {
   display: grid;
   gap: 18px;
-  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .card {
@@ -231,4 +222,14 @@ a {
   color: var(--muted);
   margin: 0 8px;
 }
-```
+
+.pub-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.pub-card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
